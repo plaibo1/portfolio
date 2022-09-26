@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.dotsBg {
+  opacity: 1;
+  background-image: radial-gradient(#3b3b3b 0.9px, #e5e5f700 0.9px);
+  background-size: 18px 18px;
+}
+
+.lineBg {
+  background-size: 8px 8px;
+  background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.8px, #e5e5f7 0, #e5e5f7 50%);
+}
+
+.rotateLoader {
+  animation: rotateLoader .5s linear infinite;
+}
+
+@keyframes rotateLoader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
