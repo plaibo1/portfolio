@@ -21,6 +21,7 @@ export const ProjectLinkButton = ({linkTo}) => {
     <a 
       href={linkTo} 
       target="_blank"
+      rel="noreferrer"
       className='px-10 py-3 inline-flex items-center font-mono font-semibold
         bg-myYellow  relative rounded-xl  border-slate-800 border-4 group'
     >
