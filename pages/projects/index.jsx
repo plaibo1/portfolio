@@ -19,10 +19,14 @@ export default function Projects({projects}) {
         <div className='grid grid-cols-2 gap-10'>
           {
             projects.map(project => {
-              return <ProjectCard
-                key={project.sys.id}
+              return <div
+                key={project.sys.id} 
+                className='w-full relative lineBg rounded-xl border-4 border-slate-700'
+              >
+              <ProjectCard
                 project={project}
               />
+              </div>
             })
           }
         </div>

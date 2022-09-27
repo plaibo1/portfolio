@@ -9,7 +9,7 @@ const ProjectCard = ({project}) => {
   console.log(projectImg)
 
   return (
-    <div className='relative w-full p-5 bg-white shadow-lg rounded-xl border-4 border-slate-700'>
+    <div className='relative w-full p-5 bg-white shadow-lg rounded-xl border-4 border-slate-700 translate-x-2 translate-y-2'>
       
       <div className='w-full h-[300px] overflow-hidden border-[3px] border-slate-700 rounded-2xl'>
         <Image 
