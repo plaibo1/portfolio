@@ -57,7 +57,17 @@ const Slug = ({ project }) => {
         <link rel="icon" href="/fav.ico" />
       </Head>
 
-      <div className='container py-[100px] px-4 max-w-7xl mx-auto relative flex items-center'>
+      <div className='container py-[200px] px-4 max-w-7xl mx-auto relative flex items-center'>
+
+        <div className='cubesBg'>
+          <div className='cubesBg__innerGradient'></div>
+          <div className='cubesBg__innerCubes'></div>
+        </div>
+
+        <div className='cubesBg right'>
+          <div className='cubesBg__innerGradient'></div>
+          <div className='cubesBg__innerCubes'></div>
+        </div>
 
         <div className='w-1/2'>
           <h1 className='border-indigo-500 border-4 rounded-2xl text-indigo-500 font-mono font-bold inline-flex px-6'>{title}</h1>
@@ -69,7 +79,7 @@ const Slug = ({ project }) => {
             <ol className='flex flex-wrap relative'>
               {techs.map(tech => {
                 return (
-                  <li key={tech} className='py-1 px-4 border-2 rounded-full mr-1 mb-2 text-sm'>{tech}</li>
+                  <li key={tech} className='py-1 px-4 border-2 rounded-full mr-1 mb-2 text-sm bg-white'>{tech}</li>
                 )
               })}
             </ol>

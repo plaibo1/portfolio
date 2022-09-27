@@ -16,7 +16,7 @@ export default function Projects({projects}) {
 
 
       <div className='container px-4 max-w-7xl mx-auto relative'>
-        <div className='grid grid-cols-3 gap-10'>
+        <div className='grid grid-cols-2 gap-10'>
           {
             projects.map(project => {
               return <ProjectCard

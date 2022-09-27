@@ -10,8 +10,46 @@
 }
 
 .lineBg {
-  background-size: 8px 8px;
-  background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.8px, #e5e5f7 0, #e5e5f7 50%);
+  /* background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.8px, #e5e5f7 0, #e5e5f7 50%); */
+  background-size: 3px 3px;
+  background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.7000000000000001px, #e5e5f7 0, #e5e5f7 50%);
+}
+
+.cubesBg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
+  top: 330px;
+  left: -230px;
+}
+
+.cubesBg.right {
+  top: 0px;
+  left: auto;
+  right: -230px;
+}
+
+.cubesBg__innerGradient {
+  background: radial-gradient(circle, rgba(9,9,121,0) 0%, rgba(255,255,255,1) 58%);
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.cubesBg__innerCubes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  background-image:  linear-gradient(#d3d5fd 1px, transparent 3px), linear-gradient(to right, #d3d5fd 2px, transparent 2px);
+  background-size: 80px 80px;
+  opacity: 0.8;
 }
 
 .rotateLoader {
