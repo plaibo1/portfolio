@@ -57,7 +57,9 @@ const Slug = ({ project }) => {
         <link rel="icon" href="/fav.ico" />
       </Head>
 
-      <header className='w-full relative overflow-hidden'>
+      <header className='w-full relative overflow-hidden 
+        lg:h-screen lg:flex lg:items-center lg:justify-center
+        xl:h-auto'>
         <div className='container py-[100px] sm:py-[120px] lg:py-[200px] px-4 
         max-w-7xl mx-auto relative 
         flex flex-col lg:flex-row items-center'>
@@ -75,14 +77,14 @@ const Slug = ({ project }) => {
           
           {/* text content */}
           <div className='mb-12 md:text-center lg:text-left lg:mb-0 lg:w-[35%] xl:w-1/2'>
-            <h1 className='border-indigo-500 border-4 rounded-2xl 
-              text-indigo-500 font-mono font-bold inline-flex px-6'>{title}</h1>
+            <h1 className='border-baseColor border-4 rounded-2xl 
+              text-baseColor font-mono font-bold inline-flex px-6'>{title}</h1>
 
             <h2 className='text-5xl lg:text-6xl font-black mb-6 mt-5'>{aboutSmall}</h2>
 
             <div className='mb-6 md:mb-10 md:flex md:flex-col md:items-center lg:inline-block'>
               <span className='font-semibold mb-3 text-base flex'>Used technologies:</span>
-              <ol className='flex flex-wrap relative'>
+              <ol className='flex flex-wrap relative lg:w-[90%]'>
                 {techs.map(tech => {
                   return (
                     <li key={tech} className='py-1 px-4 border-2 rounded-full mr-1 mb-2 text-sm bg-white'>{tech}</li>
@@ -112,15 +114,20 @@ const Slug = ({ project }) => {
         </div>
       </header>
       
-      <div className='container py-[100px] px-4 max-w-7xl mx-auto relative'>
-        <div className='prose prose-xl'>{documentToReactComponents(description)}</div>
+      <div className='container py-[50px] px-4 max-w-7xl mx-auto relative'>
 
-        <PrimaryButton
-          linkTo={'/projects'}
-          text={'Back to projects'}
-          icon={<BsDoorOpen />}
-        />
-      </div>      
+        <span className='text-5xl font-bold mb-10 block'>About project:</span>
+
+        <div className='prose-2xl prose-h3:font-sans prose-h3:font-bold font-mono mb-12'>{documentToReactComponents(description)}</div>
+
+        <div className='w-[400px]'>
+          <PrimaryButton
+            linkTo={'/projects'}
+            text={'Back to projects'}
+            icon={<BsDoorOpen />}
+          />
+        </div>
+      </div>
 
     </div>
   )

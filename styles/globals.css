@@ -12,7 +12,7 @@
 .lineBg {
   /* background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.8px, #e5e5f7 0, #e5e5f7 50%); */
   background-size: 3px 3px;
-  background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.7000000000000001px, #e5e5f7 0, #e5e5f7 50%);
+  background-image: repeating-linear-gradient(45deg, #4262ff 0, #4262ff 0.7000000000000001px, #e5e5f7 0, #e5e5f7 50%);
 }
 
 .cubesBg {
@@ -54,6 +54,11 @@
 
 .rotateLoader {
   animation: rotateLoader .5s linear infinite;
+}
+
+.textStroke {
+  /* text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black; */
+  -webkit-text-stroke: 1px #000;
 }
 
 @keyframes rotateLoader {

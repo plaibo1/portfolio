@@ -6,11 +6,16 @@ export const PrimaryButton = ({text, linkTo, icon = null}) => {
   return (
     <Link href={linkTo}>
       <a
-        className='bg-indigo-500 py-4 px-9 text-lg font-semibold text-white rounded-lg 
-          border-4 inline-flex items-center border-slate-700'
+        className='bg-baseColor py-3 px-6 sm:px-9 text-base sm:text-lg font-semibold text-white rounded-2xl 
+          border-4 inline-flex items-center justify-between border-slate-700 relative group font-mono
+          w-full'
       >
-        <span className='mr-2'>{icon}</span>
+        <div className='w-[102%] h-[115%] absolute bg-slate-700 left-0 top-0 rounded-xl 
+        border-slate-700 border-4 -z-[1] -translate-x-3 -translate-y-2 
+        group-hover:translate-x-0 group-hover:translate-y-0 transition'></div>
+
         {text}
+        <span className='ml-2'>{icon}</span>
       </a>
     </Link>
   )
@@ -23,7 +28,7 @@ export const ProjectLinkButton = ({linkTo}) => {
       target="_blank"
       rel="noreferrer"
       className='px-10 py-3 inline-flex items-center font-mono font-semibold
-        bg-myYellow  relative rounded-xl  border-slate-800 border-4 group'
+        bg-myYellow  relative rounded-xl border-slate-800 border-4 group'
     >
       <div className='w-[105%] h-[110%] absolute bg-slate-800 left-0 top-0 rounded-xl 
         border-slate-800 border-4 -z-[1] -translate-x-3 -translate-y-2 

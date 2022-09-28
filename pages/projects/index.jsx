@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import * as contentful from 'contentful';
-import ProjectCard from '../../components/ProjectPage/ProjectCard';
+import ProjectsGrid from '../../components/ProjectsGrid/ProjectsGrid';
 
 
 
@@ -14,23 +14,7 @@ export default function Projects({projects}) {
         <link rel="icon" href="/fav.ico" />
       </Head>
 
-
-      <div className='container px-4 max-w-7xl mx-auto relative'>
-        <div className='grid grid-cols-2 gap-10'>
-          {
-            projects.map(project => {
-              return <div
-                key={project.sys.id} 
-                className='w-full relative lineBg rounded-xl border-4 border-slate-700'
-              >
-              <ProjectCard
-                project={project}
-              />
-              </div>
-            })
-          }
-        </div>
-      </div>
+      <ProjectsGrid projects={projects} />
      
     </div>
   )
