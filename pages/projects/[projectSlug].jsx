@@ -120,7 +120,7 @@ const Slug = ({ project }) => {
 
         <div className='prose-2xl prose-h3:font-sans prose-h3:font-bold font-mono mb-12'>{documentToReactComponents(description)}</div>
 
-        <div className='w-[400px]'>
+        <div className='w-full overflow-hidden md:w-[400px]'>
           <PrimaryButton
             linkTo={'/projects'}
             text={'Back to projects'}
