@@ -102,7 +102,7 @@ const Slug = ({ project }) => {
           {/* video content */}
           <div className='relative ml-auto lg:w-[59%] xl:w-[65%]'>
             <div className='w-full relative lineBg rounded-xl border-4 border-slate-700'>
-              <video autoPlay={true} loop muted className='translate-x-3 translate-y-3 rounded-xl border-4 border-slate-700'>
+              <video autoPlay={true} loop muted playsinline className='translate-x-3 translate-y-3 rounded-xl border-4 border-slate-700'>
                 <source
                   src={`https:${projectVideo.fields.file.url}`}
                   type={projectVideo.fields.file.contentType}
