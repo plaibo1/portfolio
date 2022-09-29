@@ -46,7 +46,7 @@ export async function getStaticProps({ params }) {
 
 const Slug = ({ project }) => {
 
-  const { description, projectImg, projectVideo, title, slug, techs, projectUrl, aboutSmall, videos } = project.fields
+  const { description, projectImg, title, slug, techs, projectUrl, aboutSmall, videos } = project.fields
 
 
   console.log(videos)
@@ -105,14 +105,12 @@ const Slug = ({ project }) => {
           {/* video content */}
           <div className='relative ml-auto lg:w-[59%] xl:w-[65%]'>
             <div className='w-full relative lineBg rounded-xl border-4 border-slate-700'>
-              <video autoPlay loop muted playsInline className='translate-x-3 translate-y-3 rounded-xl border-4 border-slate-700'>
-                <source
-                  src={`https:${projectVideo.fields.file.url}`}
-                  type={projectVideo.fields.file.contentType}
-                />
+
+              <video autoPlay loop muted playsInline 
+                className='translate-x-3 translate-y-3 rounded-xl border-4 border-slate-700'>
 
                 {
-                  videos?.map(video => {
+                  videos.map(video => {
                     return (
                       <source 
                         key={video.sys.id}
@@ -129,6 +127,8 @@ const Slug = ({ project }) => {
                   className='w-full'
                 />
               </video>
+
+
             </div>
           </div>
 
