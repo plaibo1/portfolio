@@ -71,7 +71,7 @@ const Slug = ({ project }) => {
           <div className='cubesBg'>
             <div className='cubesBg__innerGradient'></div>
             <div className='cubesBg__innerCubes'></div>
-          </div>video
+          </div>
 
           <div className='cubesBg right'>
             <div className='cubesBg__innerGradient'></div>
