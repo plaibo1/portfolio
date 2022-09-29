@@ -3,10 +3,9 @@ import * as contentful from 'contentful';
 import Head from 'next/head'
 import Link from 'next/link'
 import MessageForm from '../components/MessageForm/MessageForm'
-import ProjectsGrid from '../components/ProjectsGrid/ProjectsGrid'
 
 
-export default function Home({projects}) {
+export default function Home() {
 
 
   return (
@@ -31,10 +30,6 @@ export default function Home({projects}) {
           </div>
         </div>
 
-        <ProjectsGrid
-          projects={projects}
-        />
-
         <div className='mt-[120px]'>
           <div className='w-[1000px] mx-auto p-6 rounded-2xl shadow-xl bg-myYellow'>
             
@@ -49,33 +44,4 @@ export default function Home({projects}) {
      
     </div>
   )
-}
-
-const client = contentful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE,
-  accessToken: process.env.NEXT_PUBLIC_API_ACCESS_TOKEN,
-});
-
-// get data from contentful
-export async function getStaticProps() {
-
-  try {
-    const data = await client.getEntries({
-      content_type: 'portfolio',
-    })
-
-    return {
-      props: {
-        projects: data.items
-      }
-    }
-  }
-  catch {
-    return {
-      props: {
-        projects: null
-      }
-    }
-  }
-
 }

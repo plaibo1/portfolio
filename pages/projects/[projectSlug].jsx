@@ -76,13 +76,13 @@ const Slug = ({ project }) => {
           </div>
           
           {/* text content */}
-          <div className='mb-12 md:text-center lg:text-left lg:mb-0 lg:w-[35%] xl:w-1/2'>
+          <div className='mb-12 md:text-center lg:text-left lg:mb-0 lg:w-[35%] xl:w-[45%]'>
             <h1 className='border-baseColor border-4 rounded-2xl 
               text-baseColor font-mono font-bold inline-flex px-6'>{title}</h1>
 
             <h2 className='text-5xl lg:text-6xl font-black mb-6 mt-5'>{aboutSmall}</h2>
 
-            <div className='mb-6 md:mb-10 md:flex md:flex-col md:items-center lg:inline-block'>
+            <div className='mb-6 md:mb-10 md:flex md:flex-col md:items-center lg:block'>
               <span className='font-semibold mb-3 text-base flex'>Used technologies:</span>
               <ol className='flex flex-wrap relative lg:w-[90%]'>
                 {techs.map(tech => {
@@ -100,12 +100,17 @@ const Slug = ({ project }) => {
 
 
           {/* video content */}
-          <div className='relative ml-auto lg:w-[59%] xl:w-2/3'>
+          <div className='relative ml-auto lg:w-[59%] xl:w-[65%]'>
             <div className='w-full relative lineBg rounded-xl border-4 border-slate-700'>
               <video autoPlay={true} loop muted className='translate-x-3 translate-y-3 rounded-xl border-4 border-slate-700'>
                 <source
                   src={`https:${projectVideo.fields.file.url}`}
                   type={projectVideo.fields.file.contentType}
+                />
+                <img
+                  src={`https:${projectImg.fields.file.url}`}
+                  alt='img'
+                  className='w-full'
                 />
               </video>
             </div>
@@ -116,11 +121,11 @@ const Slug = ({ project }) => {
       
       <div className='container py-[50px] px-4 max-w-7xl mx-auto relative'>
 
-        <span className='text-5xl font-bold mb-10 block'>About project:</span>
+        <span className='text-4xl sm:text-5xl font-bold mb-10 block'>About project:</span>
 
-        <div className='prose-2xl prose-h3:font-sans prose-h3:font-bold font-mono mb-12'>{documentToReactComponents(description)}</div>
+        <div className='prose-base md:prose-xl lg:prose-2xl prose-h3:font-sans proseCustomH3 font-mono mb-12'>{documentToReactComponents(description)}</div>
 
-        <div className='w-full overflow-hidden md:w-[400px]'>
+        <div className='w-[95%] mx-auto md:mx-0 md:w-[400px]'>
           <PrimaryButton
             linkTo={'/projects'}
             text={'Back to projects'}

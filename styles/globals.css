@@ -54,7 +54,6 @@
 }
 
 
-
 .rotateLoader {
   animation: rotateLoader .5s linear infinite;
 }
@@ -62,6 +61,10 @@
 .textStroke {
   /* text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black; */
   -webkit-text-stroke: 1px #000;
+}
+
+.proseCustomH3 h3 {
+  @apply mt-4 font-bold
 }
 
 @keyframes rotateLoader {
