@@ -44,7 +44,7 @@ export const ProjectLinkButton = ({linkTo}) => {
 
 export const LinkButtonFire = ({ linkTo, name, icon }) => {
   return (
-    <a href={linkTo} target='_blank'
+    <a href={linkTo} rel="noreferrer" target='_blank'
       className='text-baseColor py-2 px-5 rounded-lg
              border-2 border-dashed relative group text-sm sm:text-base
              justify-between flex items-center font-mono
@@ -57,6 +57,7 @@ export const LinkButtonFire = ({ linkTo, name, icon }) => {
             <Image
               layout="fill"
               src={'/speed.gif'}
+              alt='on fire!!!'
             />
           </div>
       {name} {icon} 
@@ -80,6 +81,7 @@ export const ButtonFire = ({ click, name, icon }) => {
             <Image
               layout="fill"
               src={'/speed.gif'}
+              alt='boom boom'
             />
           </div>
       {name} {icon} 

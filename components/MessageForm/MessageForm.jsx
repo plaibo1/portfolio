@@ -42,7 +42,7 @@ const MessageForm = () => {
               src={'/explosion.gif'}
             />
             <div>Just text me</div>
-           <a href='https://t.me/playbo1' target='_blank' className='underline'>here</a>
+           <a href='https://t.me/playbo1' target='_blank' rel="noreferrer" className='underline'>here</a>
           </div>
         </motion.div>
       }
