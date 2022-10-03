@@ -1,105 +1,60 @@
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react'
+
 import {AnimatePresence, motion} from 'framer-motion'
 
 
-import { RiLoader4Line } from 'react-icons/ri'
+
+import Form from './Form';
 
 const MessageForm = () => {
 
   const [isLoaded, setIsLoaded] = useState(false)
   const [isSent, setIsSent] = useState(false)
-
-  const { register, reset, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = async (data) => {
-
-    setIsLoaded(true)
-
-    try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/mailer`, {
-        method: 'post',
-        body: JSON.stringify(data),
-      })
-        .then(res => res.json())
-        .then(res => {
-          if (res.status === 'ok') {
-            reset()
-            setIsLoaded(false)
-            setIsSent(true)
-            setTimeout(() => setIsSent(false), 3000)
-          }
-        })
-    }
-    catch (err) {
-      console.log(err)
-    }
-  }
+  const [isErrorEmail, setIsErrorEmail] = useState(false)
 
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className='bg-white w-[400px] relative p-4 shadow-xl rounded-xl border-2 border-slate-600'
-      >
+      {!isErrorEmail ?
+        
+        <Form 
+          setIsErrorEmail={setIsErrorEmail}
+          setIsSent={setIsSent}
+          setIsLoaded={setIsLoaded}
+          isLoaded={isLoaded}
+        />
 
-        <input
-          {...register('email', {
-            required: 'field is required', pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "invalid email address"
-            }
-          })}
-          placeholder='playboi.2000@mail.ru'
-          type="text"
-          className='font-mono px-3 py-2 mb-4 border-2 border-slate-600 w-full rounded-xl' />
+        :
 
-        <p className='text-sm leading-1 p-1 -mt-2 text-red-400'>{errors.email?.message}</p>
-
-        <textarea
-          {...register('message', { required: 'field is required' })}
-          type="text" className='px-3 py-1 bg-transparent w-full border-2 mb-2
-            rounded-xl border-slate-600 font-mono min-h-[90px]' placeholder='send me message :)' />
-
-        <p className='text-sm leading-1 p-1 -mt-3 text-red-400'>{errors.message?.message}</p>
-
-        <button
-          disabled={isLoaded}
-          type='submit'
-          className='w-full relative group disabled:bg-indigo-300 bg-indigo-600 text-slate-50 py-3 text-lg font-semibold mt-3 rounded-lg'
+        // if error
+        <motion.div
+          initial={{ opacity: 0, translateY: -50 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          exit={{ opacity: 0, translateX: -100 }}
+          className='m-auto bg-red-500 border-2 p-5 border-slate-700 rounded-lg bg-red'
         >
-          {!isLoaded ?
-            <>
-              send
-            </>
-            :
-            <>
-              <RiLoader4Line className='inline-block mx-auto text-xl rotateLoader' />
-            </>}
-
-          <div className={`absolute left-1/2 -translate-x-[50%] w-[300px] -top-[99px]
-            group-hover:opacity-100 group-hover:block pointer-events-none
-            ${ isLoaded ? 'opacity-100 block' : 'opacity-0 hidden'}`}
-          >
+          <div className='text-lg font-mono text-white'>
+            <div>Oops! Sorry, this is a ERROR</div>
             <Image
-              width={300}
-              height={120}
-              src={'/speed.gif'}
+              width={200}
+              height={300}
+              src={'/explosion.gif'}
             />
+            <div>Just text me</div>
+           <a href='https://t.me/playbo1' target='_blank' className='underline'>here</a>
           </div>
-        </button>
-      </form>
+        </motion.div>
+      }
+      
 
       {/* messages */}
-      
-      <AnimatePresence>
-        {
-          isSent && 
-          <motion.div 
-            initial={{opacity: 0, translateY: -50}}
-            animate={{opacity: 1, translateY: 0}}
-            exit={{opacity: 0, translateX: -100}}
+      {
+          isSent &&
+          <motion.div
+            initial={{ opacity: 0, translateY: -50 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            exit={{ opacity: 0, translateX: -100 }}
             className='fixed w-full top-0 right-0 sm:w-auto sm:right-3 sm:top-3'
           >
             <div className='font-bold py-3 px-5 text-base shadow-lg bg-myGreen text-black 
@@ -108,7 +63,6 @@ const MessageForm = () => {
             </div>
           </motion.div>
         }
-      </AnimatePresence>
       
     </>
   )

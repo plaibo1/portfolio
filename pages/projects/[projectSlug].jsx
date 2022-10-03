@@ -145,7 +145,7 @@ const Slug = ({ project }) => {
 
         <div className='w-[95%] mx-auto md:mx-0 md:w-[400px]'>
           <PrimaryButton
-            linkTo={'/projects'}
+            linkTo={'/'}
             text={'Back to projects'}
             icon={<BsDoorOpen />}
           />

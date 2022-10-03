@@ -10,11 +10,11 @@ const ProjectCard = ({project}) => {
   const {projectImg, slug, title, techs} = project.fields
 
   return (
-    <div className='relative w-full p-5 bg-white rounded-xl border-2 
-      border-slate-700'>
+    <div className='relative w-full p-4 rounded-xl border-2 
+      border-slate-700 bg-white z-10'>
       
       <div className='border flex justify-center items-center 
-        rounded-lg overflow-hidden'>
+        rounded-lg overflow-hidden mb-4'>
         <Image 
           width={projectImg.fields.file.details.image.width}
           height={projectImg.fields.file.details.image.height}
@@ -36,11 +36,13 @@ const ProjectCard = ({project}) => {
         </ol>
       </div>
 
-      <PrimaryButton
-        linkTo={`/projects/${slug}`}
-        text={'Explore this project'}
-        icon={<TbArrowRightBar />}
-      />
+      <div className='w-[95%] mx-auto'>
+        <PrimaryButton
+          linkTo={`/projects/${slug}`}
+          text={'Explore this project'}
+          icon={<TbArrowRightBar />}
+        />
+      </div>
       
     </div>
   )

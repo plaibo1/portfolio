@@ -19,6 +19,9 @@ module.exports = {
         'comet':'#53596d',
         'sweetCorn':'#fbeb99',
     },
+    screens: {
+      'my-lg': '1156px'
+    }
     },
   },
   plugins: [

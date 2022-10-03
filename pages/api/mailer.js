@@ -35,8 +35,8 @@ export default async (req, res) => {
     res.status(200).json({status: 'ok'})
   }
   catch(err) {
-    console.log(err)
-    return res.status(400).json({err})
+    console.log("err", err)
+    return res.status(400).json(err)
   }
   
 }

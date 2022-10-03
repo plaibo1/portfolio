@@ -1,0 +1,29 @@
+.name {
+  font-weight: bold;
+  font-size: 52px;
+  line-height: 1.1;
+}
+
+@media screen and (min-width: 375px) {
+  .name {
+    font-size: 62px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .name {
+    font-size: 71px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .name {
+    font-size: 5em
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .name {
+    font-size: 7em
+  }
+}
