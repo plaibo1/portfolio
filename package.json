@@ -12,6 +12,7 @@
     "@contentful/rich-text-react-renderer": "^15.12.1",
     "@tailwindcss/typography": "^0.5.7",
     "contentful": "^9.2.4",
+    "framer-motion": "^7.5.1",
     "next": "12.2.5",
     "nextjs-progressbar": "^0.0.14",
     "nodemailer": "^6.7.8",

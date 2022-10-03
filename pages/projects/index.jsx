@@ -1,10 +1,16 @@
 import Head from 'next/head'
 import * as contentful from 'contentful';
 import ProjectsGrid from '../../components/ProjectsGrid/ProjectsGrid';
+import { useEffect } from 'react';
+import { consoleJob } from '../../utils/consoleJob';
 
 
 
 export default function Projects({projects}) {
+
+  useEffect(() => {
+    consoleJob()
+  }, [])
 
   return (
     <div>

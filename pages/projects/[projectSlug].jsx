@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { PrimaryButton, ProjectLinkButton } from '../../components/Buttons/Buttons';
 
 import { BsDoorOpen } from 'react-icons/bs'
+import { consoleJob } from '../../utils/consoleJob';
 
 
 const client = contentful.createClient({
@@ -46,10 +47,11 @@ export async function getStaticProps({ params }) {
 
 const Slug = ({ project }) => {
 
+  useEffect(() => {
+    consoleJob ()
+  }, [])
+
   const { description, projectImg, title, slug, techs, projectUrl, aboutSmall, videos } = project.fields
-
-
-  console.log(videos)
 
   return (
     <div>
@@ -137,9 +139,9 @@ const Slug = ({ project }) => {
       
       <div className='container py-[50px] px-4 max-w-7xl mx-auto relative'>
 
-        <span className='text-4xl sm:text-5xl font-bold mb-10 block'>About project:</span>
+        <span className='text-4xl sm:text-5xl font-bold mb-7 block'>About project:</span>
 
-        <div className='prose-base md:prose-xl lg:prose-2xl prose-h3:font-sans proseCustomH3 font-mono mb-12'>{documentToReactComponents(description)}</div>
+        <div className='prose-base md:prose-xl lg:prose-2xl prose-h3:font-sans proseCustom font-mono mb-12'>{documentToReactComponents(description)}</div>
 
         <div className='w-[95%] mx-auto md:mx-0 md:w-[400px]'>
           <PrimaryButton
