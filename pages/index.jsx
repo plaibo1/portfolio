@@ -9,7 +9,7 @@ import { consoleJob } from '../utils/consoleJob';
 export default function Home() {
 
   useEffect(() => {
-    consoleJob()
+    consoleJob() // bla bla
   }, [])
 
   return (
