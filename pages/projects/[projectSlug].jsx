@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { PrimaryButton, ProjectLinkButton } from '../../components/Buttons/Buttons';
 
 import { BsDoorOpen } from 'react-icons/bs'
+import { FiGithub } from 'react-icons/fi'
 import { consoleJob } from '../../utils/consoleJob';
 
 
@@ -51,7 +52,7 @@ const Slug = ({ project }) => {
     consoleJob ()
   }, [])
 
-  const { description, projectImg, title, slug, techs, projectUrl, aboutSmall, videos } = project.fields
+  const { description, projectImg, title, github, techs, projectUrl, aboutSmall, videos } = project.fields
 
   return (
     <div>
@@ -98,9 +99,20 @@ const Slug = ({ project }) => {
               </ol>
             </div>
 
-            <ProjectLinkButton
-              linkTo={projectUrl}
-            />
+            <div className='flex items-center'>
+              <ProjectLinkButton
+                linkTo={projectUrl}
+              />
+              
+              {
+                github &&
+                <a href={github} target='_blank' rel="noreferrer" 
+                  className='ml-7 w-9 h-9 bg-slate-800 text-white rounded-xl flex justify-center items-center text-xl'
+                >
+                    <FiGithub />
+                </a>
+              }
+            </div>
           </div>
 
 
@@ -137,13 +149,15 @@ const Slug = ({ project }) => {
         </div>
       </header>
       
-      <div className='container py-[50px] px-4 max-w-7xl mx-auto relative'>
+      <div className='container py-[50px] pb-[100px] md:pb-[50px] px-4 max-w-7xl mx-auto relative '>
 
         <span className='text-4xl sm:text-5xl font-bold mb-7 block'>About project:</span>
 
         <div className='prose-base md:prose-xl lg:prose-2xl prose-h3:font-sans proseCustom font-mono mb-12'>{documentToReactComponents(description)}</div>
 
-        <div className='w-[95%] mx-auto md:mx-0 md:w-[400px]'>
+        <div className='w-[90%] md:w-[400px] fixed bottom-10 left-1/2 -translate-x-[50%] 
+          md:relative md:translate-x-0 md:left-0 md:bottom-auto'
+        >
           <PrimaryButton
             linkTo={'/'}
             text={'Back to projects'}

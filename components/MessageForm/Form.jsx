@@ -46,21 +46,25 @@ const Form = ({setIsErrorEmail, setIsSent, setIsLoaded, isLoaded}) => {
         })}
         placeholder='playboi.2000@mail.ru'
         type="text"
-        className='font-mono px-3 py-2 mb-4 border-2 border-slate-600 w-full rounded-xl' />
+        className='font-mono px-3 py-2 border-2 border-slate-600 w-full rounded-xl' />
 
-      <p className='text-sm leading-1 p-1 -mt-2 text-red-400'>{errors.email?.message}</p>
+      <span className='text-sm text-red-400 px-2 inline-block h-4'>{errors.email?.message}</span>
 
       <textarea
         {...register('message', { required: 'field is required' })}
-        type="text" className='px-3 py-1 bg-transparent w-full border-2 mb-2
-            rounded-xl border-slate-600 font-mono min-h-[90px]' placeholder='send me message :)' />
+        type="text" 
+        placeholder='send me message :)'
+        className='px-3 py-1 bg-transparent w-full border-2 
+            rounded-xl border-slate-600 font-mono min-h-[90px]'  
+      />
 
-      <p className='text-sm leading-1 p-1 -mt-3 text-red-400'>{errors.message?.message}</p>
+      <span className='text-sm text-red-400 px-2 inline-block h-2'>{errors.message?.message}</span>
+
 
       <button
         disabled={isLoaded}
         type='submit'
-        className='w-full relative group disabled:bg-indigo-300 bg-baseColor text-slate-50 py-3 text-lg font-semibold mt-3 rounded-lg'
+        className='w-full relative group disabled:bg-indigo-300 bg-baseColor text-slate-50 py-3 text-lg font-semibold rounded-lg'
       >
         {!isLoaded ?
           <>
