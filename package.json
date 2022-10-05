@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@react-three/fiber": "^8.8.9",
     "@tailwindcss/typography": "^0.5.7",
     "contentful": "^9.2.4",
     "framer-motion": "^7.5.1",
@@ -19,7 +20,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.36.0",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "three": "^0.145.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
