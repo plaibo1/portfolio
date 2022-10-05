@@ -75,7 +75,7 @@ export default function Home({projects}) {
               <motion.div
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 onClick={() => setIsShowMessageForm(null)}
-                className='fixed w-full h-screen left-0 top-0 flex z-[999] backdrop-blur-sm'
+                className='fixed w-full h-screen left-0 top-0 flex z-[999] backdrop-blur-sm p-5 sm:p-0'
               >
                 <motion.div
                   layoutId={'showUpMessageForm'}
