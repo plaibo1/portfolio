@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@react-three/drei": "^9.34.0",
     "@react-three/fiber": "^8.8.9",
     "@tailwindcss/typography": "^0.5.7",
     "contentful": "^9.2.4",

@@ -14,6 +14,7 @@ import { FiGithub } from 'react-icons/fi'
 import style from '../styles/indexName.module.css'
 import { ButtonFire, LinkButtonFire, PrimaryButton } from '../components/Buttons/Buttons';
 import ProjectsGrid from '../components/ProjectsGrid/ProjectsGrid';
+import BoxCanvas from '../components/BoxCanvas/BoxCanvas';
 
 export default function Home({projects}) {
 
@@ -33,6 +34,10 @@ export default function Home({projects}) {
 
 
       <div className='container mt-[120px] px-4 max-w-7xl mx-auto relative'>
+
+        <div className='w-[120px] h-[120px]'>
+          <BoxCanvas />
+        </div>
 
         <div className='text-left text-slate-800 mb-16'>
           <h1 className={style.name}>Ilya Lyskov — personal portfolio</h1>
