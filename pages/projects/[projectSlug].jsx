@@ -4,6 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Head from 'next/head'
 import { PrimaryButton, ProjectLinkButton } from '../../components/Buttons/Buttons';
 
+
 import { BsDoorOpen } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
 import { consoleJob } from '../../utils/consoleJob';

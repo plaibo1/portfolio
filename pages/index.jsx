@@ -31,12 +31,12 @@ export default function Home({projects}) {
         <link rel="icon" href="/fav.ico" />
       </Head>
 
-
+      
       <div className='container mt-[120px] px-4 max-w-7xl mx-auto relative'>
 
-        <div className='text-left text-slate-800 mb-16'>
+        <motion.div exit={{translateX: 200}} className='text-left text-slate-800 mb-16'>
           <h1 className={style.name}>Ilya Lyskov — personal portfolio</h1>
-        </div>
+        </motion.div>
 
         <div className='my-10 grid-cols-2 gap-4 grid md:grid-cols-4 md:justify-items-stretch md:gap-8'>
 
