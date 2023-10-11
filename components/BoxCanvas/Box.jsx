@@ -2,6 +2,8 @@ import { useFrame } from '@react-three/fiber'
 import React, { useRef, useState } from 'react'
 import { extend } from '@react-three/fiber'
 import { MeModel } from '../MeModel/Model'
+import { CubeModel } from '../MeModel/CubeModel'
+import { Cubic } from '../CubicModel/Cubic'
 
 
 
@@ -18,14 +20,15 @@ export default function Box(props) {
     <mesh
       {...props}
       ref={mesh}
-      scale={active ? 1.5 : 1}
+      // scale={active ? 1.5 : 1}
+      // scale={}
       onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
+      // onPointerOver={(event) => setHover(true)}
+      // onPointerOut={(event) => setHover(false)}
     >
 
-      <MeModel />
-      
+      <Cubic />
+
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
   )

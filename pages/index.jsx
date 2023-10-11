@@ -1,7 +1,7 @@
 import * as contentful from 'contentful';
 
 import Head from 'next/head'
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import MessageForm from '../components/MessageForm/MessageForm'
 import { consoleJob } from '../utils/consoleJob';
 import { AnimatePresence, motion } from 'framer-motion'
@@ -19,6 +19,7 @@ import BoxCanvas from '../components/BoxCanvas/BoxCanvas';
 export default function Home({projects}) {
 
   const [isShowMessageForm, setIsShowMessageForm] = useState(null);
+  const [isZoom, setIsZoom] = useState(true);
 
   useEffect(() => {
     consoleJob() 
@@ -35,7 +36,10 @@ export default function Home({projects}) {
 
       <div className='container mt-[120px] px-4 max-w-7xl mx-auto relative'>
 
-        <div className='w-[120px] h-[120px]'>
+        <div 
+          className={`${isZoom ? 'w-[120px] h-[120px]' : 'w-[700px] h-[700px]' }`} 
+          // onClick={() => setIsZoom(prev => prev = !prev)}
+        >
           <BoxCanvas />
         </div>
 

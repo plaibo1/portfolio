@@ -5,9 +5,10 @@ import Box from './Box'
 
 const BoxCanvas = () => {
   return (
-    <Canvas camera={{position: [0, 2, 5],  zoom: 20}}>
+    <Canvas camera={{position: [0, 1, 5],  zoom: 1}}>
+
       <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+      <pointLight position={[14, 15, 5]} />
       
       <Suspense fallback='loading...'>
         <Box />
