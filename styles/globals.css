@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .dotsBg {
   opacity: 1;
   background-image: radial-gradient(#3b3b3b 0.9px, #e5e5f700 0.9px);
@@ -12,7 +11,13 @@
 .lineBg {
   /* background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.8px, #e5e5f7 0, #e5e5f7 50%); */
   background-size: 3px 3px;
-  background-image: repeating-linear-gradient(45deg, #4262ff 0, #4262ff 0.7000000000000001px, #e5e5f7 0, #e5e5f7 50%);
+  background-image: repeating-linear-gradient(
+    45deg,
+    #4262ff 0,
+    #4262ff 0.7000000000000001px,
+    #e5e5f7 0,
+    #e5e5f7 50%
+  );
 }
 
 .cubesBg {
@@ -47,15 +52,14 @@
   left: 0;
   top: 0;
   z-index: -10;
-  background: linear-gradient(#efeff5 1px, rgba(231, 222, 222, 0.001) 3px), 
+  background: linear-gradient(#efeff5 1px, rgba(231, 222, 222, 0.001) 3px),
     linear-gradient(to right, #d3d5fd 2px, rgba(212, 205, 205, 0.001) 2px);
   background-size: 80px 80px;
   background-color: #fff;
 }
 
-
 .rotateLoader {
-  animation: rotateLoader .5s linear infinite;
+  animation: rotateLoader 0.5s linear infinite;
 }
 
 .textStroke {
@@ -64,13 +68,28 @@
 }
 
 .proseCustom h3 {
-  @apply mt-8 font-bold
+  @apply mt-8 font-bold;
 }
 
 .proseCustom p {
-  @apply !mt-0 !mb-2
+  @apply !mt-0 !mb-2;
 }
 
+.mainGradient {
+  background-size: cover;
+  background: linear-gradient(
+    -225deg,
+    #4c3fff13 16%,
+    #fa923015 100%,
+    #ffbac318 100%
+  );
+}
+
+@media print {
+  .noPrint {
+    display: none;
+  }
+}
 
 @keyframes rotateLoader {
   from {
